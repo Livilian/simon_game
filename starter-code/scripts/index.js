@@ -4,22 +4,34 @@
 $(document).ready(function() {
 
     var simon = new SimonGame();
+
     var gameOn = false;
 
     //show createRandomColor after start
     $("#start").on("click", renderColors);
 
-    function iluminat
+    function illuminate_color(colorName){
+      console.log("ilumin "+colorName);
+      $("." + colorName).addClass(colorName+ '-activate');
+      setTimeout(function timeout() {
+          $("." + colorName).removeClass(colorName + '-activate');
+      }, 700);
+    }
 
     function renderColors() {
         gameOn = true;
         simon.createRandomColor();
-        $("." + simon.sequence[0]).addClass(simon.sequence + '-activate');
-        console.log("radomcolor:");
-        console.log(simon.sequence);
-        setTimeout(function timeout() {
-            $("." + simon.sequence[0]).removeClass(simon.sequence + '-activate');
-        }, 700);
+          console.log("radomcolor:");
+          console.log(simon.sequence);
+          var pepe;
+        for (var i=0; i<simon.sequence.length; i++){
+          window.setTimeout (illuminate_color(simon.sequence[i]), 2000);
+          // illuminate_color(simon.sequence[i]);
+        }
+        // for i*tant
+        //en el stInterval i será i*700
+
+
         //while createRandomColor
         //quitar el botón start una vez seleccionado
     }
@@ -82,8 +94,8 @@ $(document).ready(function() {
     function nextRound() {
         simon.round++;
         simon.userAnswer = [];
-        renderColors();
         $("#counter").text(simon.round);
+        window.setTimeout(renderColors, 1000);
     }
 
 

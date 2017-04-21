@@ -1,14 +1,19 @@
+body {
+  background-color: green;
+}
 
 .container {
   width: 100%;
   margin: 0 auto;
-  background-color: green;
+
 }
 
 header {
   text-align: center;
   padding: 5% 0;
   /*background-color: red;*/
+  font-family: Arial;
+  font-size: 20px;
 }
 
 main {
@@ -126,10 +131,10 @@ S
 }
 
 #start {
-  transform: rotate(-45deg);
   top: 87px;
   left: 68px;
-  position: absolute;
+  /*position: absolute;*/
+
 }
 
 #start:hover {
@@ -142,5 +147,9 @@ S
   left: 68px;
   position: absolute;
   color: white;
-  /*font-size: 80px;*/
+  font-size: 100px;
+  border-radius: 50%;
+  color: #fff;
+  font-family: Arial;
+  line-height: 30px;
 }

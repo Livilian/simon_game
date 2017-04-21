@@ -6,6 +6,7 @@ function SimonGame (){
   // this.userClickCount = 0;
   this.startGame = function(){
     createRandomColor();
+    illuminate_color();
     checkUserAnswer();
     nextRound();
   };
